@@ -1,0 +1,37 @@
+<div>
+  @if (characters$ | async; as characters) {
+    @for (character of characters; track character.id) {
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header fxLayout fxLayoutAlign="start center">
+          <div mat-card-avatar class="example-header-image"
+            [ngStyle]="{'background-image': 'url('+character.thumbnail.path + '.' + character.thumbnail.extension+')'}">
+          </div>
+          <!-- <img mat-card-image  class="example-header-image" src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"> -->
+          <mat-card-title>{{ character.name }}</mat-card-title>
+          <mat-card-subtitle>Comic Character</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            @defer (on hover) {
+              <app-comic [id]="character.id"></app-comic>
+            } @placeholder {
+              <div>Hover comic info</div>
+            } @error {
+              <div>Error: Something went wrong</div>
+            }
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  } @else {
+    <div style="width:100%; height:600px; background-color: grey;color:white;">Loading...</div>
+  }
+</div>
+
+
+
+

@@ -1,0 +1,17 @@
+<button #deferButton>
+  Show List of Comic Characters using &#64;defer on interaction
+</button>
+<br>
+<!-- @defer (on hover; prefetch on viewport) { -->
+@defer (on interaction(deferButton)) {
+  <app-character-list></app-character-list>
+} @placeholder {
+  <!-- <div style="width:100%; height:600px; background-color: grey;color:white;">Hover over me to fetch a list of comic characters</div> -->
+  List will load here...
+} @error {
+  <div>Error: Something went wrong</div>
+}
+
+
+
+

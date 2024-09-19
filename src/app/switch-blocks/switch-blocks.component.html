@@ -1,0 +1,45 @@
+<div style="display: flex; justify-content: flex-start; column-gap: 50px;">
+  <div style="align-content: flex-start;">
+    <input type="hidden" #selection>
+    <ul>
+      <li><a (click)="selection.value = 'joy'"><h2>JOY</h2></a></li>
+      <li><a (click)="selection.value = 'determination'"><h2>DETERMINATION</h2></a></li>
+      <li><a (click)="selection.value = 'confusion'"><h2>CONFUSION</h2></a></li>
+      <li><a (click)="selection.value = 'resolution'"><h2>RESOLUTION</h2></a></li>
+      <li><a (click)="selection.value = 'anger'"><h2>ANGER</h2></a></li>
+      <li><a (click)="selection.value = 'despair'"><h2>DESPAIR</h2></a></li>
+      <li><a (click)="selection.value = 'doubt'"><h2>DOUBT</h2></a></li>
+      <li><a (click)="selection.value = 'hysterical'"><h2>HYSTERICAL</h2></a></li>
+      <li><a (click)="selection.value = 'apathy'"><h2>APATHY</h2></a></li>
+      <li><a (click)="selection.value = 'excited'"><h2>EXCITED | AMAZED | EXILERATED</h2></a></li>
+      <li><a (click)="selection.value = 'anticipation'"><h2>ANTICIPATION</h2></a></li>
+    </ul>
+  </div>
+  <div style="align-content: center;">
+    @switch (selection.value) {
+      @case ( 'determination') {
+        <pre><img src="/assets/images/b-the-work-begins.jpg" width="500px" height="500px"></pre>
+      } @case ( 'confusion') {
+        <pre><img src="/assets/images/c-then-confusion.jpg" width="500px" height="500px"></pre>
+      } @case ( 'resolution') {
+        <pre><img src="/assets/images/g-then-clarity.jpg" width="500px" height="500px"></pre>
+      } @case ( 'anger') {
+        <pre><img src="/assets/images/d-then-anger.jpg" width="500px" height="500px"></pre>
+      } @case ( 'despair') {
+        <pre><img src="/assets/images/e-then-despair.jpg" width="500px" height="500px"></pre>
+      } @case ( 'doubt') {
+        <pre><img src="/assets/images/doubt.jpg" width="500px" height="500px"></pre>
+      } @case ( 'hysterical') {
+        <pre><img src="/assets/images/h-hysterical.jpg" width="500px" height="500px"></pre>
+      } @case ( 'apathy') {
+        <pre><img src="/assets/images/apathy.jpg" width="500px" height="500px"></pre>
+      } @case ( 'excited') {
+        <pre><img src="/assets/images/i-problem-solved.jpg" width="500px" height="500px"></pre>
+      } @case ( 'anticipation') {
+        <pre><img src="/assets/images/j-ready-for-the-next-assignment.jpg" width="500px" height="500px"></pre>
+      } @case ( 'joy') {
+        <img src="/assets/images/a-day-begins-new-feature.jpg" width="500px" height="500px">
+      }
+    }
+  </div>
+</div>

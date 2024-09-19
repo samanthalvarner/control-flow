@@ -1,0 +1,26 @@
+@if (comics$ | async; as comics) {
+  <mat-accordion>
+    @for (comic of comics; track comic.id) {
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ comic.title }} </mat-panel-title>
+            <mat-panel-description> Issue: {{ comic.issueNumber }} </mat-panel-description>
+          </mat-expansion-panel-header>
+          @for (text of comic.textObjects; track $index) {
+            <p>{{text.text}}</p>
+          } @empty {
+            <p>No description available</p>
+          }
+          @for (url of comic.urls; track $index) {
+            <a href="{{url.url}}">{{url.type}}</a>
+          } @empty {
+            <p>No links available</p>
+          }
+        </mat-expansion-panel>
+    } @empty {
+      <h3>Sorry, no comics available</h3>
+    }
+  </mat-accordion>
+} @else {
+  <h3>Loading...</h3>
+}

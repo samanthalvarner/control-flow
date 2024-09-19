@@ -1,0 +1,19 @@
+@if (choices$ | async; as choices) {
+  <div style="display: flex; justify-content: flex-start; column-gap: 50px;">
+    <div style="align-content: flex-start;">
+      <input type="hidden" #selection>
+      <ul>
+        @for (choice of choices; track choice.id) {
+          <li><a (click)="getSelection(choice)"><h2>{{ choice.emotion | uppercase }}</h2></a></li>
+        } @empty {
+          <li>No choices available</li>
+        }
+      </ul>
+    </div>
+    <div style="align-content: center;">
+      <img [src]="this.selectedChoice.img" width="500px" height="500px">
+    </div>
+  </div>
+} @else {
+  <h3>Loading...</h3>
+}
