@@ -5,6 +5,15 @@
       <ul>
         @for (choice of choices; track choice.id) {
           <li><a (click)="getSelection(choice)"><h2>{{ choice.emotion | uppercase }}</h2></a></li>
+        <!-- These variables are always available with these names, but can be aliased via a let segment.
+        The aliasing is useful when nesting
+        @for (choice of choices; track choice.id; let idx = $index, e = $even) {
+          <li>$count = {{$count}}	Number of items in a collection iterated over</li>
+          <li>$index = {{idx}}	Index of the current row</li>
+          <li>$first = {{$first}}	Whether the current row is the first row</li>
+          <li>$last = {{$last}}	Whether the current row is the last row</li>
+          <li>$even = {{e}}	Whether the current row index is even</li>
+          <li>$odd = {{$odd}}	Whether the current row index is odd</li> -->
         } @empty {
           <li>No choices available</li>
         }

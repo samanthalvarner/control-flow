@@ -24,4 +24,10 @@ export class MarvelService {
       https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=bbc2211b6b95a28e2190561db8e6a0e2`
     );
   }
+
+  getCharacterByIdError(id: number): Observable<any>{
+    return this.http.get<any>(`
+      https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=`
+    );
+  }
 }

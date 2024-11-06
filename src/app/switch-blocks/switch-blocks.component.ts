@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./switch-blocks.component.scss']
 })
 export class SwitchBlocksComponent {
-
 }
